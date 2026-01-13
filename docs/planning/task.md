@@ -1,0 +1,23 @@
+# GNOME AI Project - MVP Tasks
+
+- [ ] Project Initialization
+    - [x] Create file structure (monorepo) <!-- id: 0 -->
+    - [x] Create `task.md` and `implementation_plan.md` <!-- id: 1 -->
+- [ ] Specifications
+    - [x] Define D-Bus Introspection XML (`org.gnome.AI.xml`) <!-- id: 2 -->
+    - [x] Define Policy Configuration Schema (`policy.toml`) <!-- id: 3 -->
+- [ ] GNOME AI Core (Rust)
+    - [x] Initialize Cargo workspace <!-- id: 4 -->
+    - [x] Implement D-Bus Service scaffolding (zbus) <!-- id: 5 -->
+    - [x] Implement Basic Session Manager <!-- id: 6 -->
+    - [x] Implement MVP Policy Engine (Allowlist) <!-- id: 7 -->
+- [x] GNOME Shell Extension (TypeScript)
+    - [x] Initialize NPM project <!-- id: 8 -->
+    - [x] Implement D-Bus Client Client <!-- id: 9 -->
+    - [x] Implement UI (Panel/Indicator) <!-- id: 10 -->
+- [x] Tools / Skills (MVP)
+    - [x] Implement `tool.open_app` <!-- id: 11 -->
+    - [x] Implement `tool.tracker_search` <!-- id: 12 -->
+    - [x] Define additional high-value tools (`tool.summarize_selection`, `tool.quick_note`) <!-- id: 13 -->
+- [x] Configuration & Maintenance
+    - [x] Create `.gitignore` files <!-- id: 14 -->
