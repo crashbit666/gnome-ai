@@ -1,0 +1,59 @@
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN"
+"http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node>
+  <!-- 
+    org.gnome.AI.Core:
+    Main interface for the GNOME AI subsystem.
+  -->
+  <interface name="org.gnome.AI.Core">
+    <!-- GetVersion: Returns semantic version string -->
+    <method name="GetVersion">
+      <arg direction="out" type="s" name="version"/>
+      <arg direction="out" type="s" name="api_version"/>
+    </method>
+
+    <!-- CreateSession: Starts a new conversation/interaction context -->
+    <method name="CreateSession">
+      <arg direction="in" type="a{sv}" name="options"/>
+      <arg direction="out" type="o" name="session_path"/>
+    </method>
+
+    <!-- ListCapabilities: What features are enabled (local/remote models, networking, etc) -->
+    <method name="GetCapabilities">
+      <arg direction="out" type="a{sv}" name="capabilities"/>
+    </method>
+  </interface>
+
+  <!-- 
+    org.gnome.AI.Session:
+    Represents a specific conversation or interaction flow.
+  -->
+  <interface name="org.gnome.AI.Session">
+    <!-- SendMessage: User sends text, system replies -->
+    <method name="SendMessage">
+      <arg direction="in" type="s" name="text"/>
+      <arg direction="in" type="a{sv}" name="options"/>
+      <arg direction="out" type="s" name="reply_text"/>
+      <arg direction="out" type="a{sv}" name="reply_meta"/>
+    </method>
+
+    <!-- PlanActions: Ask AI to formulate a plan without executing it yet -->
+    <method name="PlanActions">
+      <arg direction="in" type="s" name="request"/>
+      <arg direction="in" type="a{sv}" name="options"/>
+      <arg direction="out" type="s" name="plan_id"/>
+      <arg direction="out" type="a{sv}" name="plan_details"/>
+    </method>
+
+    <!-- ExecutePlan: Confirm execution of a specific plan -->
+    <method name="ExecutePlan">
+      <arg direction="in" type="s" name="plan_id"/>
+      <arg direction="out" type="a{sv}" name="result"/>
+    </method>
+
+    <!-- Signals -->
+    <signal name="MessageAppended">
+      <arg type="a{sv}" name="message_data"/>
+    </signal>
+  </interface>
+</node>

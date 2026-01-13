@@ -1,0 +1,12 @@
+{
+    "name": "gnome-ai-extension",
+    "version": "0.1.0",
+    "description": "GNOME Shell Extension for AI",
+    "main": "dist/extension.js",
+    "scripts": {
+        "build": "tsc"
+    },
+    "devDependencies": {
+        "typescript": "^5.0.0"
+    }
+}

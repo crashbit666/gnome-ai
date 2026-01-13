@@ -1,0 +1,10 @@
+{
+  "name": "GNOME AI Assistant",
+  "description": "Seamless AI integration for GNOME",
+  "uuid": "ai-assistant@gnome.org",
+  "shell-version": [
+    "45",
+    "46",
+    "47"
+  ]
+}

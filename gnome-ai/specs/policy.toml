@@ -1,0 +1,19 @@
+# GNOME AI Policy Configuration
+# Location: ~/.config/gnome-ai/policy.toml
+
+[global]
+privacy_mode = "local_only" # or "hybrid", "cloud_allowed"
+
+[tools.open_app]
+default_consent = "auto" # R0 risk
+risk_level = "R0"
+
+[tools.tracker_search]
+default_consent = "once" # R1 risk
+risk_level = "R1"
+scopes = ["context.tracker.search"]
+
+[tools.clipboard]
+default_consent = "always" # R3 risk
+risk_level = "R3"
+scopes = ["context.clipboard.read"]
